@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "\"Intro to Backend, Node.js, Express.js, MongoDB\"",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "\"npm run\""
+  },
+  "author": "\"Janardhan\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
