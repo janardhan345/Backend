@@ -5,11 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "\"npm run\""
+    "start": "node Backend/src/index.js",
+    "dev": "nodemon Backend/src/index.js"
   },
   "author": "\"Janardhan\"",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5",
+    "nodemon": "^3.1.11"
   }
 }
+
+
