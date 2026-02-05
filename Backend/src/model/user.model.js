@@ -32,11 +32,9 @@ const userSchema = new Schema(
     }
 );
     // hash passwords before saving it using bcrypt
-    userSchema.pre("save", async function (next) {
-        if (!this.isModified("password")) return next();
+    userSchema.pre("save", async function () {
+        if (!this.isModified("password")) return;
         this.password = await bcrypt.hash(this.password, 10);
-
-        next();
     });
     // compare passwords
     userSchema.methods.comparePassword = async function (password) {

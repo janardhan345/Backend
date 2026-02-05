@@ -27,7 +27,7 @@ const registerUser = async(req, res) => {
     }
 }
 
-const  loginUser = async(res, req) => {
+const  loginUser = async(req, res) => {
     try {
          const {email, password} = req.body;
 
