@@ -35,4 +35,28 @@ const getPosts = async(req,res) => {
     }
 }
 
-export { createPost , getPosts} ;
+const updatePosts = async(req,res) => { 
+    try {
+        // edge case handling of empty body 
+        if(Object.keys(req.body).length === 0){
+            return res.status(400).json({
+                message: "Provided amount of data is not Enough."
+            });
+        }
+        const updatedPost = await post.findByIdAndUpdate(req.params.id, req.body, {new:true});
+
+        if(!updatedPost) return res.status(404).json({
+            message:"Post not found"
+        });
+
+        return res.status(200).json({
+            message:"Post updated successfully", post:updatedPost
+        })
+    } catch (error) {
+        res.status(500).json({
+            message:"Internal server error", error
+        });
+    }
+}
+
+export { createPost , getPosts, updatePosts} ;
