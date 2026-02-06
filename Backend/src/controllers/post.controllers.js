@@ -1,3 +1,4 @@
+import req from 'express/lib/request.js';
 import { post } from '../model/post.model.js';
 
 // create a post 
@@ -59,4 +60,23 @@ const updatePosts = async(req,res) => {
     }
 }
 
-export { createPost , getPosts, updatePosts} ;
+const deletePost = async(req, res) => {
+    try {
+        const deleted = await post.findByIdAndDelete(req.params.id);
+
+        if(!deleted) return res.status(404).json({
+            message:"Post not found", error
+        });
+
+        res.status(200).json({
+            message:"Post successfully deleted",
+
+        })
+    } catch (error) {
+        res.status(500).json({
+            message:"Internal server error", error
+        });
+    }
+}
+
+export { createPost , getPosts, updatePosts, deletePost} ;
