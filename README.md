@@ -1,5 +1,5 @@
 # This Repo contains a Basic Backend project to understand the fundamentals of Backend
-## # Node.js Authentication & CRUD API
+##  Node.js Authentication & CRUD API
 
 This project is a backend REST API built to practice core backend concepts
 such as CRUD operations, authentication, and secure password handling.
